@@ -1,8 +1,58 @@
 ﻿@page
 @model MyBookListRazor.IndexModel
-@{
-    ViewData["Title"] = "Index";
-}
 
-<h1>Index</h1>
+<br />
+<div class="container row p-0 m-0">
+    <div class="col-10">
+        <h2 class="text-info">Book list</h2>
+    </div>
+    <div class="col-2">
+        <a asp-page="Create" class="btn btn-info form-control text-white">Create New Book</a> 
+    </div>
+
+
+    <div class="col-12 border p-3 m-3">
+        <form method="post">
+
+            @if (Model.Books.Count() > 0)
+            {
+            <table class="table table-striped border" >
+                <tr class="table-secondary">
+                    <th>
+                        <label asp-for="Books.FirstOrDefault().Name"></label>
+                    </th>
+                    <th>
+                        @*Html.DisplayNameFor(m => m.Books.FirstOrDefault().Author)*@
+                        <label asp-for="Books.FirstOrDefault().Author"></label>
+                    </th>
+                    <th>
+
+                    </th>
+                    @foreach (var item in Model.Books)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(m=>item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(m=>item.Author)
+                            </td>
+                            <td>
+                                <button class="btn btn-danger btn-sm">Delete</button>
+                                <a class="btn btn-success btn-sm text-white">Edit</a>
+                            </td>
+                        </tr>
+
+                    }
+                </tr>
+            </table>
+            }
+            else
+            {
+                <p>No Books Avilable.</p>
+            }
+
+        </form>
+    </div>
+</div> 
 
