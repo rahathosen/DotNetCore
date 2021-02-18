@@ -2,9 +2,9 @@
 @model MyBookListRazor.IndexModel
 
 <style>
-    body{
-        background:#cecaca;
-        color:white;
+    body {
+        background: #cecaca;
+        color: white;
     }
 </style>
 <script></script>
@@ -15,7 +15,7 @@
     </div>
 
     <div class="col-3 mt-1">
-        <a class="btn btn-info form-control">Crete New Book</a>
+        <a asp-page="Create" class="btn btn-info form-control">Crete New Book</a>
     </div>
 
     <div class="col-12 border p-3 mt-3">
@@ -29,35 +29,40 @@
                         </th>
                         <th>
                             <label asp-for="Books.FirstOrDefault().Author"></label>
-
+                        </th>
+                        <th>
+                            <label asp-for="Books.FirstOrDefault().ISBN"></label>
+                        </th>
+                        <th>
+                            <label>Update and Delete</label>
                         </th>
                     </tr>
-                    @foreach(var item in Model.Books)
+                    @foreach (var item in Model.Books)
                     {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(m=>item.Name)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(m =>item.Author )
-                            </td>
-                            <td>
-                                <button class="btn btn-danger btn-sm">Delete</button>
-                            <!--<button class="btn btn-success btn-sm">Edit</button> -->
-                                <a class="btn btn-success btn-sm text-white">Edit</a>
-                            </td>
-                        </tr>
-                    }
+                <tr>
+                    <td>
+                        @Html.DisplayFor(m => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.Author)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.ISBN)
+                    </td>
+                    <td>
+                        <button class="btn btn-danger btn-sm">Delete</button>
+                        <!--<button class="btn btn-success btn-sm">Edit</button> -->
+                        <a class="btn btn-success btn-sm text-white">Edit</a>
+                    </td>
 
+                </tr>
+                    }
                 </table>
             }
             else
             {
                 <p>No books Avilable </p>
             }
-
-
         </form>
-    </div> 
-
+    </div>
 </div>

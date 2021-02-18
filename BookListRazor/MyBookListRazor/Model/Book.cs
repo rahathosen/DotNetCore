@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyBookListRazor.Model
 {
-    public class Book 
+    public class Book
     {
         [Key]
         public int Id { get; set; }
@@ -15,5 +15,7 @@ namespace MyBookListRazor.Model
         public string Name { get; set; }
 
         public string Author { get; set; }
+
+        public string ISBN { get; set; }
     }
 }
