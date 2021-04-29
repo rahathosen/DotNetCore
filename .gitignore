@@ -3,7 +3,4 @@
 /BookListRazor/MyBookListRazor/bin
 **/bin
 **/obj
-bin/**
-obj/**
-/RepositoryPattern/.vs
 **/.vs
