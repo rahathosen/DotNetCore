@@ -1,3 +1,7 @@
 /BookListRazor/.vs
 /BookListRazor/MyBookListRazor/obj
 /BookListRazor/MyBookListRazor/bin
+**/bin
+**/obj
+bin/**
+obj/**
